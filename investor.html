@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investor Registration | Trefcel Energy</title>
+  <meta
+    name="description"
+    content="Register as an investor on Trefcel Energy to own solar assets outright or on instalment and earn from energy delivery and excess power sales."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --secondary: #2563eb;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --orange: #f59e0b;
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+      --gradient: linear-gradient(135deg, #10b981 0%, #2563eb 100%);
+      --soft: linear-gradient(135deg, #ecfdf5 0%, #e0f2fe 55%, #eff6ff 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 24px;
+    }
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--gradient);
+      color: #fff;
+      font-weight: 900;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--white);
+      box-shadow: 0 12px 24px rgba(16, 185, 129, 0.22);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--dark);
+      border: 1.5px solid rgba(15, 23, 42, 0.12);
+    }
+    .hero {
+      background: var(--soft);
+      padding: 72px 0 48px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(16,185,129,0.1);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.06;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+    .hero h1 span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 22px;
+      max-width: 650px;
+    }
+    .bullet-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .bullet-list li {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(15,23,42,0.06);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+    .dashboard-card {
+      background: #0f172a;
+      border-radius: 30px;
+      padding: 16px;
+      box-shadow: 0 28px 60px rgba(15,23,42,0.18);
+    }
+    .dashboard-screen {
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .dash-top {
+      padding: 18px;
+      background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+      color: #fff;
+    }
+    .dash-top h3 {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .dash-top p {
+      color: rgba(255,255,255,0.86);
+      font-size: 14px;
+      margin: 0;
+    }
+    .dash-body {
+      padding: 18px;
+    }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .metric-card strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .metric-card span {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 700;
+    }
+    .list-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .list-card h4 {
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .list-card p {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    .section {
+      padding: 72px 0;
+    }
+    .section-header {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+    .section-header h2 {
+      font-size: 38px;
+      line-height: 1.12;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      color: var(--gray);
+      font-size: 17px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .card p {
+      color: var(--gray);
+    }
+    .card ul {
+      list-style: none;
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .card li {
+      position: relative;
+      padding-left: 18px;
+      color: #334155;
+      font-weight: 500;
+    }
+    .card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    .form-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: start;
+    }
+    form {
+      display: grid;
+      gap: 16px;
+    }
+    .field-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(15,23,42,0.12);
+      border-radius: 14px;
+      padding: 14px 14px;
+      font: inherit;
+      background: #fff;
+      color: var(--dark);
+      outline: none;
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(16,185,129,0.1);
+    }
+    .check-wrap {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      font-size: 14px;
+      color: #334155;
+    }
+    .check input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+    }
+    .terms-box {
+      background: #eff6ff;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .terms-box h4 {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .terms-box ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .terms-box li {
+      position: relative;
+      padding-left: 16px;
+      color: #334155;
+      font-size: 14px;
+    }
+    .terms-box li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--secondary);
+      font-weight: 900;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .step-no {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--secondary);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .step h4 {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 52px 0 42px;
+      margin-top: 40px;
+    }
+    footer p {
+      color: rgba(255,255,255,0.74);
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .form-wrap,
+      .field-group,
+      .steps,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding-top: 52px;
+      }
+      .hero h1,
+      .section-header h2 {
+        font-size: 32px;
+      }
+      nav .container {
+        flex-direction: column;
+        padding: 14px 22px;
+      }
+      .nav-actions {
+        width: 100%;
+      }
+      .nav-actions .btn {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">⚡</span>
+        Trefcel Energy
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline">Back to Main Site</a>
+        <a href="consumer.html" class="btn btn-primary">Consumer Page</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Powered by Adnin Solutions Ltd since 2014</div>
+          <h1>Dedicated <span>investor registration</span> for solar asset ownership and energy income</h1>
+          <p>
+            This page is designed for individuals, diaspora investors, cooperatives, institutions
+            and businesses that want to buy solar assets outright or on instalment and participate
+            in energy delivery and excess power monetisation.
+          </p>
+
+          <ul class="bullet-list">
+            <li>Buy qualifying solar assets outright or on approved instalment</li>
+            <li>Own assets under signed Trefcel platform terms</li>
+            <li>Track performance, utilisation and commercial output</li>
+            <li>Sell excess generation to approved consumers where allowed</li>
+          </ul>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="dashboard-screen">
+            <div class="dash-top">
+              <h3>Investor Dashboard</h3>
+              <p>Asset ownership • Output • Earnings • Consumer allocation</p>
+            </div>
+            <div class="dash-body">
+              <div class="metric-grid">
+                <div class="metric-card">
+                  <strong>3</strong>
+                  <span>Owned Assets</span>
+                </div>
+                <div class="metric-card">
+                  <strong>₦1.2m</strong>
+                  <span>Projected Income</span>
+                </div>
+                <div class="metric-card">
+                  <strong>86%</strong>
+                  <span>Utilisation</span>
+                </div>
+                <div class="metric-card">
+                  <strong>42</strong>
+                  <span>Consumers Served</span>
+                </div>
+              </div>
+
+              <div class="list-card">
+                <h4>Commercial Solar Asset</h4>
+                <p>Lagos deployment • Active consumers connected • Excess output enabled</p>
+              </div>
+
+              <div class="list-card">
+                <h4>Solar EV Charging Asset</h4>
+                <p>Infrastructure-backed growth opportunity for charging revenue and clean mobility demand</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Who this page is for</div>
+        <h2>Investor onboarding requirements</h2>
+        <p>
+          This page is structured for serious ownership-led registration, where the investor
+          joins the platform as an asset buyer and long-term participant in energy delivery.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Best fit for</h3>
+          <ul>
+            <li>Diaspora investors</li>
+            <li>Individuals and family offices</li>
+            <li>Energy-focused SMEs and partnerships</li>
+            <li>Cooperatives and community-backed groups</li>
+            <li>Institutions seeking infrastructure-linked ownership</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>What the investor gets</h3>
+          <ul>
+            <li>Structured solar asset ownership route</li>
+            <li>Outright and instalment participation models</li>
+            <li>Potential income from energy delivery</li>
+            <li>Visibility into utilisation and output</li>
+            <li>Future EV charging asset participation options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="register">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Investor registration form</div>
+        <h2>Register as an investor</h2>
+        <p>
+          Use this page to capture investor identity, preferred asset class, ownership mode and resale intent.
+        </p>
+      </div>
+
+      <div class="form-wrap">
+        <div class="card">
+          <form>
+            <div class="field-group">
+              <div>
+                <label for="fullName">Full Name / Company Name</label>
+                <input id="fullName" type="text" placeholder="Enter investor name" />
+              </div>
+              <div>
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="tel" placeholder="e.g. +234..." />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <div>
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="Enter email address" />
+              </div>
+              <div>
+                <label for="investorType">Investor Type</label>
+                <select id="investorType">
+                  <option value="">Select investor type</option>
+                  <option>Individual</option>
+                  <option>Diaspora Investor</option>
+                  <option>Company</option>
+                  <option>Cooperative</option>
+                  <option>Institution</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="address">Address</label>
+              <textarea id="address" placeholder="Enter registered or residential address"></textarea>
+            </div>
+
+            <div class="field-group">
+              <div>
+                <label for="ownershipMode">Ownership Mode</label>
+                <select id="ownershipMode">
+                  <option value="">Select ownership mode</option>
+                  <option>Outright Purchase</option>
+                  <option>Instalment Purchase</option>
+                </select>
+              </div>
+              <div>
+                <label for="assetClass">Preferred Asset Class</label>
+                <select id="assetClass">
+                  <option value="">Select asset class</option>
+                  <option>Residential Solar Asset</option>
+                  <option>Inverter AC Ready Asset</option>
+                  <option>Commercial Solar Asset</option>
+                  <option>Solar EV Charging Asset</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <div>
+                <label for="deploymentArea">Preferred Deployment Area</label>
+                <input id="deploymentArea" type="text" placeholder="e.g. Lagos, Abuja, Ibadan" />
+              </div>
+              <div>
+                <label for="usageIntent">Usage Intent</label>
+                <select id="usageIntent">
+                  <option value="">Select usage intent</option>
+                  <option>Own site only</option>
+                  <option>Sell to consumers</option>
+                  <option>Hybrid own-use and resale</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="budget">Indicative Budget / Investment Size</label>
+              <input id="budget" type="text" placeholder="e.g. ₦5,000,000 - ₦20,000,000" />
+            </div>
+
+            <div>
+              <label for="notes">Additional Notes</label>
+              <textarea id="notes" placeholder="Tell us your goals, expected scale, target locations or preferred commercial structure"></textarea>
+            </div>
+
+            <div class="check-wrap">
+              <label class="check">
+                <input type="checkbox" />
+                <span>I understand that investor ownership is subject to Trefcel Energy platform terms and signed asset-use agreements.</span>
+              </label>
+
+              <label class="check">
+                <input type="checkbox" />
+                <span>I understand that Trefcel Energy may manage installation, metering, monitoring and consumer allocation under agreed operating terms.</span>
+              </label>
+
+              <label class="check">
+                <input type="checkbox" />
+                <span>I agree that any resale of excess power is subject to technical, legal and contractual approval.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Investor Registration</button>
+          </form>
+        </div>
+
+        <div class="terms-box">
+          <h4>Investor terms summary</h4>
+          <ul>
+            <li>The investor is the owner of the qualifying asset purchased from Trefcel Energy, whether bought outright or on approved instalment.</li>
+            <li>Ownership is governed by signed platform and asset-use agreements.</li>
+            <li>Trefcel Energy may manage installation, monitoring, metering and consumer allocation under agreed operating terms.</li>
+            <li>Investors may sell excess power to connected consumers where technically and contractually approved.</li>
+            <li>Settlement, maintenance, instalment default handling, operating limits and revenue rights should be governed by the signed investor agreement.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-no">1</div>
+          <h4>Register</h4>
+          <p>Complete investor identity and asset preference details.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">2</div>
+          <h4>Choose Structure</h4>
+          <p>Select outright or instalment ownership and target asset class.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">3</div>
+          <h4>Sign Terms</h4>
+          <p>Accept investor ownership, settlement and energy-use terms.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">4</div>
+          <h4>Deploy Asset</h4>
+          <p>Trefcel proceeds with deployment, metering and commercial setup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>
+        © 2024 Trefcel Energy. All rights reserved.
+        <br /><br />
+        Powered by <strong>Adnin Solutions Ltd</strong> since <strong>2014</strong>.
+        <br />
+        Dedicated investor registration page for solar asset ownership, deployment and energy income participation.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
